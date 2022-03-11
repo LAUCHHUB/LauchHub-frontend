@@ -54,7 +54,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <BoxImage>
-      <img src="https://lz.finance/icons/lz-logo.svg" alt="logo" width={140} />
+      <img src="/logo-full.png" alt="logo" width={140} />
     </BoxImage>
   );
 
