@@ -5,16 +5,16 @@ import Dropdown from "../../../components/Dropdown/Dropdown";
 import { PositionProps } from "../../../components/Dropdown/types";
 import Button from "../../../components/Button/Button";
 import * as IconModule from "../icons";
-import { LangType } from "../types";
 import MenuButton from "./MenuButton";
+import { Language } from "../types";
 
-const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
+const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
 const { LanguageIcon } = Icons;
 
 interface Props extends PositionProps {
   currentLang: string;
-  langs: LangType[];
-  setLang: (lang: LangType) => void;
+  langs: Language[];
+  setLang: (lang: Language) => void;
 }
 
 const LangSelector: React.FC<Props> = ({ position, currentLang, langs, setLang }) => (

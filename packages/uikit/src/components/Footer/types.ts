@@ -1,4 +1,4 @@
-import { Language } from "../LangSelector/types";
+import { Language } from "../../widgets/Menu";
 import { FlexProps } from "../Box";
 
 export type FooterLinkType = {

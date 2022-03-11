@@ -5,9 +5,9 @@ import Button from "../Button/Button";
 import LanguageIcon from "../Svg/Icons/Language";
 import MenuButton from "./MenuButton";
 import { Colors } from "../../theme";
-import { Language } from "./types";
 import { Position } from "../Dropdown/types";
 import { Scale } from "../Button/types";
+import { Language } from "../../widgets/Menu";
 
 interface Props {
   currentLang: string;
