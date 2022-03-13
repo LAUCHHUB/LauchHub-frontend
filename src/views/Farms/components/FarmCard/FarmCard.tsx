@@ -62,11 +62,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
     tokenAddress: farm.token.address,
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
-  const lpAddress = getAddress(farm.lpAddresses)
+  const lpAddress = farm.lpAddresses
   const isPromotedFarm = farm.token.symbol === 'CAKE'
 
   return (
     <StyledCard isActive={isPromotedFarm}>
+      {/* <FarmCardHeader >
+      </FarmCardHeader> */}
       <FarmCardInnerContainer>
         <CardHeading
           lpLabel={lpLabel}
@@ -77,7 +79,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
         />
         {!removed && (
           <Flex justifyContent="space-between" alignItems="center">
-            <Text>{t('APR')}:</Text>
+            <Text>{t('APY')}:</Text>
             <Text bold style={{ display: 'flex', alignItems: 'center' }}>
               {farm.apr ? (
                 <ApyButton
@@ -88,6 +90,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
                   lpLabel={lpLabel}
                   addLiquidityUrl={addLiquidityUrl}
                   cakePrice={cakePrice}
+                  lpPrice={new BigNumber(1)}
                   apr={farm.apr}
                   displayApr={displayApr}
                 />
@@ -97,9 +100,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
             </Text>
           </Flex>
         )}
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" mt="4px">
           <Text>{t('Earn')}:</Text>
           <Text bold>{earnLabel}</Text>
+        </Flex>
+        <Flex justifyContent="space-between" mt="6px">
+          <Text>{t('Daily Reward')}:</Text>
+          <Text bold>
+            {farm.dailyReward.toLocaleString('en-US', { maximumFractionDigits: 2 })} {farm.dual.label}
+          </Text>
         </Flex>
         <CardActionsContainer
           farm={farm}
@@ -109,7 +118,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
           addLiquidityUrl={addLiquidityUrl}
         />
       </FarmCardInnerContainer>
-
       <ExpandingWrapper>
         <ExpandableSectionButton
           onClick={() => setShowExpandableSection(!showExpandableSection)}

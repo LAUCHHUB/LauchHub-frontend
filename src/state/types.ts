@@ -61,6 +61,7 @@ export interface DeserializedFarm extends DeserializedFarmConfig {
   tokenPriceVsQuote?: BigNumber
   poolWeight?: BigNumber
   userData?: DeserializedFarmUserData
+  dailyReward: number
 }
 
 export enum VaultKey {
@@ -127,15 +128,12 @@ export interface Profile {
 
 export interface SerializedFarmsState {
   data: SerializedFarm[]
-  loadArchivedFarmsData: boolean
   userDataLoaded: boolean
-  loadingKeys: Record<string, boolean>
   poolLength?: number
 }
 
 export interface DeserializedFarmsState {
   data: DeserializedFarm[]
-  loadArchivedFarmsData: boolean
   userDataLoaded: boolean
   poolLength?: number
 }

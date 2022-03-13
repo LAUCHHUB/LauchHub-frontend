@@ -155,7 +155,7 @@ const Farms: React.FC = ({ children }) => {
   const isInactive = pathname.includes('history')
   const isActive = !isInactive && !isArchived
 
-  // usePollFarmsWithUserData(isArchived)
+  usePollFarmsWithUserData(isArchived)
 
   // Users with no wallet connected should see 0 as Earned amount
   // Connected users should see loading indicator until first userData has loaded
@@ -163,10 +163,7 @@ const Farms: React.FC = ({ children }) => {
 
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
 
-  const activeFarms = farmsLP.filter(
-    (farm) =>
-      farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid) && (!poolLength || poolLength > farm.pid),
-  )
+  const activeFarms = farmsLP.filter(() => true)
   const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X' && !isArchivedPid(farm.pid))
   const archivedFarms = farmsLP.filter((farm) => isArchivedPid(farm.pid))
 
@@ -268,9 +265,8 @@ const Farms: React.FC = ({ children }) => {
     numberOfFarmsVisible,
   ])
 
-  // linear-gradient(139.73deg,#000000 0%,#2b104c 100%)
-
   chosenFarmsLength.current = chosenFarmsMemoized.length
+  console.log('chosenFarmsMemoized', chosenFarmsMemoized)
 
   useEffect(() => {
     if (isIntersecting) {
@@ -283,15 +279,15 @@ const Farms: React.FC = ({ children }) => {
     }
   }, [isIntersecting])
 
-  const rowData = chosenFarmsMemoized.map((farm) => {
+  const rowData = chosenFarmsMemoized.map((farm: any) => {
     const { token, quoteToken } = farm
     const tokenAddress = token.address
     const quoteTokenAddress = quoteToken.address
     const lpLabel = farm.lpSymbol && farm.lpSymbol.split(' ')[0].toUpperCase().replace('PANCAKE', '')
 
-    const row: RowProps = {
+    const row: any = {
       apr: {
-        value: getDisplayApr(farm.apr, farm.lpRewardsApr),
+        value: '123123', //  getDisplayApr(farm.apr, farm.lpRewardsApr),
         pid: farm.pid,
         multiplier: farm.multiplier,
         lpLabel,
@@ -308,7 +304,7 @@ const Farms: React.FC = ({ children }) => {
         quoteToken: farm.quoteToken,
       },
       earned: {
-        earnings: getBalanceNumber(new BigNumber(farm.userData.earnings)),
+        earnings: getBalanceNumber(new BigNumber(farm.userDividends ?? 0)),
         pid: farm.pid,
       },
       liquidity: {
@@ -356,15 +352,10 @@ const Farms: React.FC = ({ children }) => {
     return <FlexLayout>{children}</FlexLayout>
   }
 
-  // const handleSortOptionChange = (option: OptionProps): void => {
-  //   setSortOption(option.value)
-  // }
-
   return (
     <FarmsContext.Provider value={{ chosenFarmsMemoized }}>
       <PageHeader>
         <HeadingFarm>
-          {/* {t('Farms')} */}
           <div className="lauch-title">LAUCH Stake LPs tokens to earn.</div>
           <div className="lauch-title ab">LAUCH Stake LPs tokens to earn.</div>
         </HeadingFarm>
@@ -376,17 +367,6 @@ const Farms: React.FC = ({ children }) => {
             <ArrowForwardIcon color="primary" />
           </Button>
         </NextLinkFromReactRouter>
-        {/* <Heading scale="lg" color="text">
-          {t('Stake LP tokens to earn.')}
-        </Heading> */}
-        {/* <NextLinkFromReactRouter to="/farms/auction" id="lottery-pot-banner">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Community Auctions')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NextLinkFromReactRouter> */}
       </PageHeader>
       <Page>
         <ControlContainer>
@@ -402,43 +382,10 @@ const Farms: React.FC = ({ children }) => {
               <Text> {t('Staked only')}</Text>
             </ToggleWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              {/* <Text textTransform="uppercase">{t('Search')}</Text> */}
               <SearchInput onChange={handleChangeQuery} placeholder="Search farms" />
             </LabelWrapper>
           </ViewControls>
           <FilterContainer>
-            {/* <LabelWrapper>
-              <Text textTransform="uppercase">{t('Sort by')}</Text>
-              <Select
-                options={[
-                  {
-                    label: t('Hot'),
-                    value: 'hot',
-                  },
-                  {
-                    label: t('APR'),
-                    value: 'apr',
-                  },
-                  {
-                    label: t('Multiplier'),
-                    value: 'multiplier',
-                  },
-                  {
-                    label: t('Earned'),
-                    value: 'earned',
-                  },
-                  {
-                    label: t('Liquidity'),
-                    value: 'liquidity',
-                  },
-                  {
-                    label: t('Latest'),
-                    value: 'latest',
-                  },
-                ]}
-                onOptionChange={handleSortOptionChange}
-              />
-            </LabelWrapper> */}
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </FilterContainer>
         </ControlContainer>

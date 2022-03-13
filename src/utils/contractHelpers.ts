@@ -50,6 +50,8 @@ import ifoV2Abi from 'config/abi/ifoV2.json'
 import pointCenterIfo from 'config/abi/pointCenterIfo.json'
 import lotteryV2Abi from 'config/abi/lotteryV2.json'
 import masterChef from 'config/abi/masterchef.json'
+import abiFarmContract from 'config/abi/abiFarmContract.json'
+import abiToken from 'config/abi/abiToken.json'
 import sousChef from 'config/abi/sousChef.json'
 import sousChefV2 from 'config/abi/sousChefV2.json'
 import sousChefBnb from 'config/abi/sousChefBnb.json'
@@ -90,6 +92,8 @@ import type {
   PancakeProfile,
   LotteryV2,
   Masterchef,
+  AbiFarmContract,
+  AbiToken,
   SousChef,
   SousChefV2,
   BunnySpecial,
@@ -164,6 +168,17 @@ export const getLotteryV2Contract = (signer?: Signer | Provider) => {
 export const getMasterchefContract = (signer?: Signer | Provider) => {
   return getContract(masterChef, getMasterChefAddress(), signer) as Masterchef
 }
+export const getFarmContract = (address?: string, signer?: Signer | Provider) => {
+  return getContract(
+    abiFarmContract,
+    address || '0x01E17e4E4f533EDa43DF743587921397639F28ef',
+    signer,
+  ) as AbiFarmContract
+}
+export const getTokenLPsContract = (address?: string, signer?: Signer | Provider) => {
+  return getContract(abiToken, address || '0x7A1afa8397429d44c21d37d39026427C599c8c18', signer) as AbiToken
+}
+
 export const getClaimRefundContract = (signer?: Signer | Provider) => {
   return getContract(claimRefundAbi, getClaimRefundAddress(), signer) as ClaimRefund
 }

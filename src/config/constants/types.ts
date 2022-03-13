@@ -67,12 +67,14 @@ interface FarmConfigBaseProps {
   pid: number
   lpSymbol: string
   lpAddresses: Address
-  multiplier?: string
+  // multiplier?: string
   isCommunity?: boolean
   dual?: {
     rewardPerBlock: number
     earnLabel: string
     endBlock: number
+    label: string
+    symbol: string
   }
 }
 

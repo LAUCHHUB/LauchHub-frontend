@@ -6,7 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 import Row, { RowProps } from './Row'
 
 export interface ITableProps {
-  data: RowProps[]
+  data: any
   columns: ColumnType<RowProps>[]
   userDataReady: boolean
   sortColumn?: string

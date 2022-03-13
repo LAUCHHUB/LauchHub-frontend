@@ -1,15 +1,13 @@
 import { Flex } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import FarmAuctionsBanner from './FarmAuctionsBanner'
-import IFOBanner from './IFOBanner'
 
 const HomeBanner = () => {
   const { account } = useWeb3React()
 
   const farmAuction = <FarmAuctionsBanner />
-  const ifo = <IFOBanner />
 
-  return farmAuction || ifo ? (
+  return farmAuction ? (
     <Flex
       flexDirection={['column', null, null, 'row']}
       pt={[account ? '220px' : '0', null, null, account ? '76px' : '0']}
@@ -18,7 +16,6 @@ const HomeBanner = () => {
       style={{ gap: '16px' }}
     >
       <FarmAuctionsBanner />
-      <IFOBanner />
     </Flex>
   ) : null
 }

@@ -3,7 +3,6 @@ import BigNumber from 'bignumber.js'
 import { Flex, IconButton, useModal, CalculateIcon } from '@pancakeswap/uikit'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'
-import { useFarmUser, useLpTokenPrice } from 'state/farms/hooks'
 
 const ApyLabelContainer = styled(Flex)`
   cursor: pointer;
@@ -20,6 +19,7 @@ export interface ApyButtonProps {
   lpLabel?: string
   multiplier: string
   cakePrice?: BigNumber
+  lpPrice?: BigNumber
   apr?: number
   displayApr?: string
   addLiquidityUrl?: string
@@ -31,14 +31,14 @@ const ApyButton: React.FC<ApyButtonProps> = ({
   lpLabel,
   lpSymbol,
   cakePrice,
+  lpPrice,
   apr,
   multiplier,
   displayApr,
   addLiquidityUrl,
 }) => {
   const { t } = useTranslation()
-  const lpPrice = useLpTokenPrice(lpSymbol)
-  const { tokenBalance, stakedBalance } = useFarmUser(pid)
+  const { tokenBalance, stakedBalance } = { tokenBalance: new BigNumber(1), stakedBalance: new BigNumber(1) }
   const [onPresentApyModal] = useModal(
     <RoiCalculatorModal
       linkLabel={t('Get %symbol%', { symbol: lpLabel })}

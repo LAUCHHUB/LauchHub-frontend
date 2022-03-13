@@ -9,9 +9,8 @@ import Balance from 'components/Balance'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useTranslation } from 'contexts/Localization'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAssync } from 'state/farms'
 import { useRouter } from 'next/router'
-import { useLpTokenPrice } from 'state/farms/hooks'
 import { getBalanceAmount, getBalanceNumber } from 'utils/formatBalance'
 import DepositModal from '../DepositModal'
 import WithdrawModal from '../WithdrawModal'
@@ -29,6 +28,7 @@ interface FarmCardActionsProps {
   addLiquidityUrl?: string
   cakePrice?: BigNumber
   lpLabel?: string
+  lpPrice: BigNumber
 }
 
 const IconButtonWrapper = styled.div`
@@ -49,14 +49,14 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
   addLiquidityUrl,
   cakePrice,
   lpLabel,
+  lpPrice,
 }) => {
   const { t } = useTranslation()
+  const router = useRouter()
   const { onStake } = useStakeFarms(pid)
   const { onUnstake } = useUnstakeFarms(pid)
-  const router = useRouter()
   const dispatch = useAppDispatch()
   const { account } = useWeb3React()
-  const lpPrice = useLpTokenPrice(tokenName)
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError } = useCatchTxError()
 
@@ -71,7 +71,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
           {t('Your funds have been staked in the farm')}
         </ToastDescriptionWithTx>,
       )
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
     }
   }
 
@@ -86,7 +86,7 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
           {t('Your earnings have also been harvested to your wallet')}
         </ToastDescriptionWithTx>,
       )
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
     }
   }
 

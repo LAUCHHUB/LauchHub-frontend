@@ -8,7 +8,6 @@ import useToast from 'hooks/useToast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
 import { DeserializedFarm } from 'state/types'
 import styled from 'styled-components'
 import { getAddress } from 'utils/addressHelpers'
@@ -34,45 +33,16 @@ interface FarmCardActionsProps {
 const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidityUrl, cakePrice, lpLabel }) => {
   const { t } = useTranslation()
   const { toastSuccess } = useToast()
-  const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
-  const { pid, lpAddresses } = farm
-  const { allowance, tokenBalance, stakedBalance, earnings } = farm.userData || {}
-  const lpAddress = getAddress(lpAddresses)
-  const isApproved = account && allowance && allowance.isGreaterThan(0)
+  const isApproved = false
+  const pendingTx = false
   const dispatch = useAppDispatch()
 
-  const lpContract = useERC20(lpAddress)
-
-  const { onApprove } = useApproveFarm(lpContract)
-
   const handleApprove = useCallback(async () => {
-    const receipt = await fetchWithCatchTxError(() => {
-      return onApprove()
-    })
-    if (receipt?.status) {
-      toastSuccess(t('Contract Enabled'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
+    const receipt = {
+      transactionHash: '0x0000',
     }
-  }, [onApprove, dispatch, account, pid, t, toastSuccess, fetchWithCatchTxError])
-
-  const renderApprovalOrStakeButton = () => {
-    return isApproved ? (
-      <StakeAction
-        stakedBalance={stakedBalance}
-        tokenBalance={tokenBalance}
-        tokenName={farm.lpSymbol}
-        pid={pid}
-        apr={farm.apr}
-        lpLabel={lpLabel}
-        cakePrice={cakePrice}
-        addLiquidityUrl={addLiquidityUrl}
-      />
-    ) : (
-      <Button mt="8px" width="100%" disabled={pendingTx} onClick={handleApprove}>
-        {t('Enable Contract')}
-      </Button>
-    )
-  }
+    toastSuccess(t('Contract Enabled'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+  }, [t, toastSuccess])
 
   return (
     <Action>
@@ -84,7 +54,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
           {t('Earned')}
         </Text>
       </Flex>
-      <HarvestAction earnings={earnings} pid={pid} />
+      <HarvestAction earnings={new BigNumber(1)} />
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
           {farm.lpSymbol}
@@ -93,7 +63,21 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
           {t('Staked')}
         </Text>
       </Flex>
-      {!account ? <ConnectWalletButton mt="8px" width="100%" /> : renderApprovalOrStakeButton()}
+      {!account ? (
+        <ConnectWalletButton mt="18px" width="100%" />
+      ) : (
+        <StakeAction
+          stakedBalance={new BigNumber(1)}
+          tokenBalance={new BigNumber(1)}
+          tokenName={farm.lpSymbol}
+          pid={1}
+          apr={farm.apr}
+          lpLabel={lpLabel}
+          lpPrice={new BigNumber(1)}
+          cakePrice={cakePrice}
+          addLiquidityUrl={addLiquidityUrl}
+        />
+      )}
     </Action>
   )
 }

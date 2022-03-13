@@ -27,7 +27,12 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({ lpLabel, multiplier, is
     <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
       <TokenPairImage variant="inverted" primaryToken={token} secondaryToken={quoteToken} width={64} height={64} />
       <Flex flexDirection="column" alignItems="flex-end">
-        <Heading mb="4px">{lpLabel.split(' ')[0]}</Heading>
+        <Flex width="100%">
+          <TokenPairImage variant="inverted" primaryToken={token} secondaryToken={quoteToken} width={24} height={24} />
+          <Heading mb="4px" style={{ whiteSpace: 'nowrap' }}>
+            {lpLabel.split(' ')[0]}
+          </Heading>
+        </Flex>
         <Flex justifyContent="center">
           {isCommunityFarm ? <FarmAuctionTag /> : <CoreTag />}
           {multiplier ? (
