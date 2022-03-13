@@ -19,6 +19,20 @@ const Container = styled.div`
   flex-direction: column;
   // Safari fix
   flex-shrink: 0;
+  position: relative;
+
+  // &.active > div:first-child {
+  //   &:before {
+  //     content: "";
+  //     position: absolute;
+  //     bottom: -2px;
+  //     right: -2px;
+  //     width: 80px;
+  //     height: 100px;
+  //     border-radius: 50%;
+  //     box-shadow: 47px 46px 0 0 ${({ theme }) => theme.colors.background};
+  //   }
+  // }
 `;
 
 const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHeight: number }>`
@@ -54,7 +68,7 @@ const Accordion: React.FC<Props> = ({
   const IconElement = icon;
 
   return (
-    <Container>
+    <Container className={isActive ? "active" : ""}>
       <MenuEntry onClick={handleClick} className={className} isActive={isActive}>
         <IconElement />
         <LinkLabel isPushed={isPushed}>{label}</LinkLabel>

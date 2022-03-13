@@ -17,7 +17,7 @@ export const HorizontalDivider = styled.div`
 
 export const StepIndicator = styled(Flex)<{ success: boolean; disabled?: boolean }>`
   border-radius: 50%;
-  background-color: ${({ theme, success, disabled }) => {
+  background: ${({ theme, success, disabled }) => {
     if (disabled) {
       return 'none'
     }

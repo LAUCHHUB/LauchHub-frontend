@@ -11,7 +11,7 @@ interface MobileRowProps {
 }
 
 const StyledMobileRow = styled(Box)`
-  background-color: ${({ theme }) => theme.card.background};
+  background: ${({ theme }) => theme.card.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 
   &:first-child {

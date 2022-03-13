@@ -29,7 +29,7 @@ export const StyledModal = styled(Modal)<{ stage: SellingStage }>`
 `
 
 export const GreyedOutContainer = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
   padding: 16px;
 `
 

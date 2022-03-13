@@ -52,7 +52,7 @@ const TokenButton = styled(Flex)`
 
 const LockedTokensContainer = styled(Flex)`
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
   padding: 16px;
   flex-direction: column;
   gap: 8px;

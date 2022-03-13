@@ -12,9 +12,9 @@ interface ProfileUserMenuItemProps {
 }
 
 const Dot = styled.div`
-  background-color: ${({ theme }) => theme.colors.failure};
+  background:${({ theme }) => theme.colors.failure};
   border-radius: 50%;
-  height: 8px;
+  height: 8px; 
   width: 8px;
 `
 

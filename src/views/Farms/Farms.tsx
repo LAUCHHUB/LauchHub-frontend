@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useState, useMemo, useRef, createContext } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text, Button, ArrowForwardIcon, Flex } from '@pancakeswap/uikit'
+import { Image, RowType, Toggle, Text, Button, ArrowForwardIcon, Flex } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import styled from 'styled-components'
@@ -21,7 +21,6 @@ import { ViewMode } from 'state/user/actions'
 import { useRouter } from 'next/router'
 import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
-import Select, { OptionProps } from 'components/Select/Select'
 import Loading from 'components/Loading'
 import ToggleView from 'components/ToggleView/ToggleView'
 import { FarmWithStakedValue } from './components/FarmCard/FarmCard'
@@ -45,6 +44,31 @@ const ControlContainer = styled.div`
     flex-wrap: wrap;
     padding: 16px 32px;
     margin-bottom: 0;
+  }
+`
+
+const HeadingFarm = styled.div`
+  position: relative;
+  margin-bottom: 10px;
+  .lauch-title {
+    color: transparent;
+    font-family: Avenir Next;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 82px;
+    // text-align: center;
+    background: linear-gradient(90deg, #1e09a3 0.94%, #08bac6 48.8%, #f86817 98.95%);
+    -webkit-background-clip: text;
+  }
+  .lauch-title.ab {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    margin: auto auto auto -2px;
+    background: none;
+    color: ${({ theme }) => theme.colors.text}; // #fff;
   }
 `
 
@@ -131,7 +155,7 @@ const Farms: React.FC = ({ children }) => {
   const isInactive = pathname.includes('history')
   const isActive = !isInactive && !isArchived
 
-  usePollFarmsWithUserData(isArchived)
+  // usePollFarmsWithUserData(isArchived)
 
   // Users with no wallet connected should see 0 as Earned amount
   // Connected users should see loading indicator until first userData has loaded
@@ -244,6 +268,8 @@ const Farms: React.FC = ({ children }) => {
     numberOfFarmsVisible,
   ])
 
+  // linear-gradient(139.73deg,#000000 0%,#2b104c 100%)
+
   chosenFarmsLength.current = chosenFarmsMemoized.length
 
   useEffect(() => {
@@ -330,27 +356,37 @@ const Farms: React.FC = ({ children }) => {
     return <FlexLayout>{children}</FlexLayout>
   }
 
-  const handleSortOptionChange = (option: OptionProps): void => {
-    setSortOption(option.value)
-  }
+  // const handleSortOptionChange = (option: OptionProps): void => {
+  //   setSortOption(option.value)
+  // }
 
   return (
     <FarmsContext.Provider value={{ chosenFarmsMemoized }}>
       <PageHeader>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-          {t('Farms')}
-        </Heading>
-        <Heading scale="lg" color="text">
+        <HeadingFarm>
+          {/* {t('Farms')} */}
+          <div className="lauch-title">LAUCH Stake LPs tokens to earn.</div>
+          <div className="lauch-title ab">LAUCH Stake LPs tokens to earn.</div>
+        </HeadingFarm>
+        <NextLinkFromReactRouter to="/add/BNB/0x55d398326f99059fF775485246999027B3197955" id="lottery-pot-banner">
+          <Button p="0" variant="text">
+            <Text color="primary" bold fontSize="16px" mr="4px">
+              Add Liquidity to get LPs Token
+            </Text>
+            <ArrowForwardIcon color="primary" />
+          </Button>
+        </NextLinkFromReactRouter>
+        {/* <Heading scale="lg" color="text">
           {t('Stake LP tokens to earn.')}
-        </Heading>
-        <NextLinkFromReactRouter to="/farms/auction" id="lottery-pot-banner">
+        </Heading> */}
+        {/* <NextLinkFromReactRouter to="/farms/auction" id="lottery-pot-banner">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">
               {t('Community Auctions')}
             </Text>
             <ArrowForwardIcon color="primary" />
           </Button>
-        </NextLinkFromReactRouter>
+        </NextLinkFromReactRouter> */}
       </PageHeader>
       <Page>
         <ControlContainer>
@@ -365,10 +401,13 @@ const Farms: React.FC = ({ children }) => {
               />
               <Text> {t('Staked only')}</Text>
             </ToggleWrapper>
-            <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
+            <LabelWrapper style={{ marginLeft: 16 }}>
+              {/* <Text textTransform="uppercase">{t('Search')}</Text> */}
+              <SearchInput onChange={handleChangeQuery} placeholder="Search farms" />
+            </LabelWrapper>
           </ViewControls>
           <FilterContainer>
-            <LabelWrapper>
+            {/* <LabelWrapper>
               <Text textTransform="uppercase">{t('Sort by')}</Text>
               <Select
                 options={[
@@ -399,11 +438,8 @@ const Farms: React.FC = ({ children }) => {
                 ]}
                 onOptionChange={handleSortOptionChange}
               />
-            </LabelWrapper>
-            <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text textTransform="uppercase">{t('Search')}</Text>
-              <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />
-            </LabelWrapper>
+            </LabelWrapper> */}
+            <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </FilterContainer>
         </ControlContainer>
         {renderContent()}

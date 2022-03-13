@@ -14,7 +14,7 @@ import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
 
 const Body = styled(CardBody)`
-  background-color: ${({ theme }) => theme.colors.dropdownDeep};
+  background: ${({ theme }) => theme.colors.dropdownDeep};
 `
 
 export default function Pool() {

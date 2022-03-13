@@ -30,7 +30,7 @@ const Connector = styled.div<StatusProps>`
     return $isFirstPart ? "top:0;" : "top:50%;";
   }}
   left: calc(50% - 2px);
-  background-color: ${({ theme, status }) =>
+  background: ${({ theme, status }) =>
     theme.colors[status === "past" || status === "current" ? "success" : "textDisabled"]};
 `;
 
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
 
 export const StepNumber = styled.div<StatusProps>`
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
-  background-color: ${({ theme, status }) => theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
+  background: ${({ theme, status }) => theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
   border: 2px solid ${({ theme, status }) => (status === "past" ? theme.colors.success : "transparent")};
   border-radius: ${({ theme }) => theme.radii.circle};
   color: ${getStepNumberFontColor};

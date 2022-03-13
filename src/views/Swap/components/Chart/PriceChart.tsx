@@ -22,7 +22,7 @@ import { StyledPriceChart } from './styles'
 // import PairPriceDisplay from '../../../../components/PairPriceDisplay'
 
 const ChartButton = styled(Button)`
-  background-color: ${({ $active, theme }) => $active && `${theme.colors.primary}0f`};
+  background: ${({ $active, theme }) => $active && `${theme.colors.primary}0f`};
   padding: 4px 8px;
   border-radius: 6px;
 `

@@ -110,7 +110,7 @@ const Wrapper = styled.div`
 
 const Popup = styled.div`
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.secondary};
   border-radius: 32px;
   color: #ffffff;
   display: flex;

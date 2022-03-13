@@ -31,7 +31,7 @@ const StyledDatePickerPortal = styled.div`
   .react-datepicker__month-text:hover,
   .react-datepicker__quarter-text:hover,
   .react-datepicker__year-text:hover {
-    background-color: ${({ theme }) => theme.colors.cardBorder};
+    background: ${({ theme }) => theme.colors.cardBorder};
   }
 
   .react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle::before,
@@ -51,7 +51,7 @@ const StyledDatePickerPortal = styled.div`
   .react-datepicker__year-text--selected,
   .react-datepicker__year-text--in-selecting-range,
   .react-datepicker__year-text--in-range {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
   }
 
   .react-datepicker__day--selected:hover,
@@ -66,14 +66,14 @@ const StyledDatePickerPortal = styled.div`
   .react-datepicker__year-text--selected:hover,
   .react-datepicker__year-text--in-selecting-range:hover,
   .react-datepicker__year-text--in-range:hover {
-    background-color: ${({ theme }) => theme.colors.primaryBright};
+    background: ${({ theme }) => theme.colors.primaryBright};
   }
 
   .react-datepicker__day--keyboard-selected,
   .react-datepicker__month-text--keyboard-selected,
   .react-datepicker__quarter-text--keyboard-selected,
   .react-datepicker__year-text--keyboard-selected {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.secondary};
     color: #ffffff;
   }
 
@@ -81,7 +81,7 @@ const StyledDatePickerPortal = styled.div`
   .react-datepicker__month-text--keyboard-selected:hover,
   .react-datepicker__quarter-text--keyboard-selected:hover,
   .react-datepicker__year-text--keyboard-selected:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.secondary};
     color: #ffffff;
   }
 
@@ -108,10 +108,10 @@ const StyledDatePickerPortal = styled.div`
     .react-datepicker__time-box
     ul.react-datepicker__time-list
     li.react-datepicker__time-list-item {
-    background-color: ${({ theme }) => theme.card.background};
+    background: ${({ theme }) => theme.card.background};
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors.cardBorder};
+      background: ${({ theme }) => theme.colors.cardBorder};
     }
   }
 

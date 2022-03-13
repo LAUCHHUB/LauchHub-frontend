@@ -10,7 +10,7 @@ import NothingToClaimModal from './NothingToClaimModal'
 
 const StyledClaimCheck = styled(Flex)`
   align-items: center;
-  background-color: ${({ theme }) => theme.card.background};
+  background: ${({ theme }) => theme.card.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   cursor: pointer;
   justify-content: space-between;

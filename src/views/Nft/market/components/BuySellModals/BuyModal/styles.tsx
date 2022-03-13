@@ -25,7 +25,7 @@ export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`
 export const BorderedBox = styled(Grid)`
   margin: 16px 0;
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
   border-radius: ${({ theme }) => theme.radii.default};
   grid-template-columns: 1fr 1fr;

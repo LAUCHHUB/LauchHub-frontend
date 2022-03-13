@@ -18,7 +18,7 @@ const StyledProposalRow = styled(NextLinkFromReactRouter)`
 
   &:hover {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.dropdown};
+    background: ${({ theme }) => theme.colors.dropdown};
   }
 `
 

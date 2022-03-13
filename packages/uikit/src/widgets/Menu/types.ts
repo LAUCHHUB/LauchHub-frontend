@@ -10,6 +10,14 @@ export interface Language {
   locale: string;
 }
 
+export interface Profile {
+  username?: string;
+  image?: string;
+  profileLink: string;
+  noProfileLink: string;
+  showPip?: boolean;
+}
+
 export interface LinkStatus {
   text: string;
   color: keyof Colors;

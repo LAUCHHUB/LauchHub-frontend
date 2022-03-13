@@ -10,7 +10,7 @@ export const TableWrapper = styled(Flex)`
   padding-top: 16px;
   flex-direction: column;
   gap: 16px;
-  background-color: ${({ theme }) => theme.card.background};
+  background: ${({ theme }) => theme.card.background};
   border-radius: ${({ theme }) => theme.radii.card};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
@@ -34,6 +34,6 @@ export const Arrow = styled.div`
 
 export const Break = styled.div`
   height: 1px;
-  background-color: ${({ theme }) => theme.colors.cardBorder};
+  background: ${({ theme }) => theme.colors.cardBorder};
   width: 100%;
 `

@@ -5,7 +5,7 @@ import useTheme from 'hooks/useTheme'
 import { BallWithNumber, MatchExampleA, MatchExampleB, PoolAllocationChart } from '../svgs'
 
 const Divider = styled.div`
-  background-color: ${({ theme }) => theme.colors.cardBorder};
+  background: ${({ theme }) => theme.colors.cardBorder};
   height: 1px;
   margin: 40px 0;
   width: 100%;
@@ -151,7 +151,7 @@ const AllocationColorCircle = styled.div<{ color: string }>`
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  background-color: ${({ color }) => color};
+  background: ${({ color }) => color};
 `
 
 const AllocationMatch: React.FC<{ color: string; text: string }> = ({ color, text }) => {

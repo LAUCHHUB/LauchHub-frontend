@@ -31,7 +31,7 @@ const TopBox = styled(Flex)`
   flex-direction: column;
   margin: -24px;
   padding: 24px;
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 

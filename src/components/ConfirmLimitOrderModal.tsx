@@ -15,7 +15,7 @@ const InfoCardWrapper = styled.div`
   padding: 16px;
   margin-top: 24px;
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
 `
 
 interface ConfirmLimitOrderModalProps {

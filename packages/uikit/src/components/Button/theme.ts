@@ -38,7 +38,7 @@ export const styleVariants = {
   },
   [variants.SUBTLE]: {
     backgroundColor: "textSubtle",
-    color: "backgroundAlt",
+    color: "black",
   },
   [variants.DANGER]: {
     backgroundColor: "failure",

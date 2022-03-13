@@ -19,7 +19,7 @@ import useAllPancakeBunnyNfts from '../../../hooks/useAllPancakeBunnyNfts'
 const INITIAL_SLIDE = 4
 
 const SwiperCircle = styled.div<{ isActive }>`
-  background-color: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : theme.colors.textDisabled)};
+  background: ${({ theme, isActive }) => (isActive ? theme.colors.secondary : theme.colors.textDisabled)};
   width: 12px;
   height: 12px;
   margin-right: 8px;

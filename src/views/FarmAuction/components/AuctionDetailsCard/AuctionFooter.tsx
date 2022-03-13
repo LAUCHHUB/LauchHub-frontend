@@ -6,7 +6,7 @@ import { Auction, AuctionStatus } from 'config/constants/types'
 import WhitelistedBiddersButton from '../WhitelistedBiddersButton'
 
 const FooterInner = styled(Box)`
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
 `
 
 const AuctionFooter: React.FC<{ auction: Auction }> = ({ auction }) => {

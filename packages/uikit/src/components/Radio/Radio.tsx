@@ -34,7 +34,7 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   transition: background-color 0.2s ease-in-out;
   border: 0;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.input};
+  background: ${({ theme }) => theme.colors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 
   &:after {
@@ -57,9 +57,9 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
+    background: ${({ theme }) => theme.colors.success};
     &:after {
-      background-color: ${({ theme }) => theme.radio.handleBackground};
+      background: ${({ theme }) => theme.radio.handleBackground};
     }
   }
 

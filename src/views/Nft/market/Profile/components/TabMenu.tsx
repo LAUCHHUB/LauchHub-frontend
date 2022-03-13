@@ -20,7 +20,7 @@ const Tab = styled.button<{ $active: boolean }>`
   border-radius: 16px 16px 0 0;
   font-size: 16px;
   font-weight: ${({ $active }) => ($active ? '600' : '400')};
-  background-color: ${({ theme, $active }) => ($active ? theme.colors.background : 'transparent')};
+  background ${({ theme, $active }) => ($active ? theme.colors.background : 'transparent')};
   transition: background-color 0.3s ease-out;
 `
 

@@ -22,7 +22,7 @@ interface PoolRowProps {
 }
 
 const StyledRow = styled.div`
-  background-color: transparent;
+  background: transparent;
   display: flex;
   cursor: pointer;
 `

@@ -36,12 +36,12 @@ const InputPanel = styled.div`
   flex-flow: column nowrap;
   position: relative;
   border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background: ${({ theme }) => theme.colors.backgroundAlt};
   z-index: 1;
 `
 const Container = styled.div`
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.input};
+  background: ${({ theme }) => theme.colors.input};
   box-shadow: ${({ theme }) => theme.shadows.inset};
 `
 interface CurrencyInputPanelProps {

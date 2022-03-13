@@ -64,7 +64,7 @@ const InlineLink = styled(Link)`
 const SmallStakePoolCard = styled(Box)`
   margin-top: 16px;
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
 `
 
 const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {

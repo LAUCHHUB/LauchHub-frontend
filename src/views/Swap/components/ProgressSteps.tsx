@@ -9,7 +9,7 @@ const Grouping = styled(RowBetween)`
 const Circle = styled.div<{ confirmed?: boolean; disabled?: boolean }>`
   min-width: 20px;
   min-height: 20px;
-  background-color: ${({ theme, confirmed, disabled }) =>
+  background: ${({ theme, confirmed, disabled }) =>
     disabled ? theme.colors.backgroundDisabled : confirmed ? theme.colors.success : theme.colors.primary};
   border-radius: 50%;
   color: #ffffff;

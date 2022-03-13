@@ -4,16 +4,17 @@ import styled from 'styled-components'
 import debounce from 'lodash/debounce'
 import { useTranslation } from 'contexts/Localization'
 
-const StyledInput = styled(Input)`
-  border-radius: 16px;
-  margin-left: auto;
-`
-
 const InputWrapper = styled.div`
   position: relative;
   ${({ theme }) => theme.mediaQueries.sm} {
     display: block;
   }
+`
+
+const StyledInput = styled(Input)`
+  border-radius: 16px;
+  margin-left: auto;
+  background: transparent;
 `
 
 interface Props {

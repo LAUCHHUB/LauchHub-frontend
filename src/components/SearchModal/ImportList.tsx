@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 const TextDot = styled.div`
   height: 3px;
   width: 3px;
-  background-color: ${({ theme }) => theme.colors.text};
+  background: ${({ theme }) => theme.colors.text};
   border-radius: 50%;
 `
 

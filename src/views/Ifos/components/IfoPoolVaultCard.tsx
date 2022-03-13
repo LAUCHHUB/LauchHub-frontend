@@ -46,17 +46,17 @@ const StyledTokenContent = styled(Flex)`
 
 const StyledCardFooter = styled(Box)`
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
 `
 
 const StyledCardBody = styled(CardBody)`
   display: grid;
   padding: 16px;
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
   gap: 16px;
   ${ActionContainer} {
     margin: 0;
-    background-color: ${({ theme }) => theme.colors.invertedContrast};
+    background: ${({ theme }) => theme.colors.invertedContrast};
   }
 `
 

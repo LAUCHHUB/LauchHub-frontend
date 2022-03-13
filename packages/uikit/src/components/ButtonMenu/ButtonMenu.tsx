@@ -17,7 +17,7 @@ const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
 };
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
-  background-color: ${getBackgroundColor};
+  background: ${getBackgroundColor};
   border-radius: 16px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   border: 1px solid ${getBorderColor};
@@ -44,7 +44,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
         opacity: 0.5;
 
         & > button:disabled {
-          background-color: transparent;
+          background:transparent;
           color: ${variant === variants.PRIMARY ? theme.colors.primary : theme.colors.textSubtle};
         }
     `;

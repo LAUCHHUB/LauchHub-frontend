@@ -74,7 +74,7 @@ it("renders correctly", () => {
       font-size: 16px;
       font-weight: 600;
       color: #FFFFFF;
-      background-color: #7A6EAA;
+      background:#7A6EAA;
     }
 
     .c5 {
@@ -98,7 +98,7 @@ it("renders correctly", () => {
       font-size: 16px;
       font-weight: 600;
       color: #7A6EAA;
-      background-color: #eeeaf4;
+      background:#eeeaf4;
     }
 
     @media screen and (min-width:370px) {

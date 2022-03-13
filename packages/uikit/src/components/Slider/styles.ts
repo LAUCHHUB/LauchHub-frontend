@@ -25,7 +25,7 @@ const bunnyButt = `"data:image/svg+xml,%3Csvg width='15' height='32' viewBox='0 
 const getBaseThumbStyles = ({ isMax, disabled }: StyledInputProps) => `
   -webkit-appearance: none;
   background-image: url(${isMax ? bunnyHeadMax : bunnyHeadMain});
-  background-color: transparent;
+  background:transparent;
   box-shadow: none;
   border: 0;
   cursor: ${getCursorStyle};
@@ -85,7 +85,7 @@ export const StyledInput = styled.input<StyledInputProps>`
 `;
 
 export const BarBackground = styled.div<DisabledProp>`
-  background-color: ${({ theme, disabled }) => theme.colors[disabled ? "textDisabled" : "inputSecondary"]};
+  background: ${({ theme, disabled }) => theme.colors[disabled ? "textDisabled" : "inputSecondary"]};
   height: 2px;
   position: absolute;
   top: 18px;
@@ -93,7 +93,7 @@ export const BarBackground = styled.div<DisabledProp>`
 `;
 
 export const BarProgress = styled.div<DisabledProp>`
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   height: 10px;
   position: absolute;

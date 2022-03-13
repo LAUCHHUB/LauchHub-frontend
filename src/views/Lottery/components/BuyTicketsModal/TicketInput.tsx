@@ -11,7 +11,7 @@ const InputsContainer = styled.div<{ focused: boolean; isDuplicate: boolean }>`
   height: 36px;
   box-sizing: border-box;
   border: 1px solid #d7caec;
-  background-color: #eeeaf4;
+  background: #eeeaf4;
   border-radius: 16px;
   margin-bottom: 8px;
   ${({ isDuplicate }) =>
@@ -37,7 +37,7 @@ const DigitInput = styled.input`
   width: 16px;
   text-align: center;
   min-width: 0;
-  background-color: transparent;
+  background: transparent;
   caret-color: #7a6faa;
 
   &::placeholder {

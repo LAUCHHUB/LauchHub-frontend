@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const StyledRibbon = styled.div<{ color: string }>`
   display: flex;
   justify-content: center;
-  background-color: ${({ theme, color }) => theme.colors[color]};
+  background: ${({ theme, color }) => theme.colors[color]};
   color: white;
   position: absolute;
   right: 0;

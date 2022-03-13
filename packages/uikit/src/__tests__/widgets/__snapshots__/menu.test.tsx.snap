@@ -471,7 +471,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c13:hover:not(:disabled) {
-  background-color: #EFF4F5;
+  background:#EFF4F5;
 }
 
 .c13:active:not(:disabled) {
@@ -499,7 +499,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c10 {
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   border: 1px solid #E7E3EB;
   border-radius: 16px;
   padding-bottom: 4px;
@@ -565,7 +565,7 @@ exports[`renders correctly 1`] = `
   transform: translate(-50%,0);
   left: 50%;
   bottom: auto;
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   box-shadow: 0px 2px 12px -8px rgba(25,19,38,0.1),0px 1px 1px rgba(25,19,38,0.05);
   padding: 16px;
   max-height: 400px;
@@ -588,7 +588,7 @@ exports[`renders correctly 1`] = `
   transform: translate(-50%,0);
   left: 50%;
   bottom: 100%;
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   box-shadow: 0px 2px 12px -8px rgba(25,19,38,0.1),0px 1px 1px rgba(25,19,38,0.05);
   padding: 16px;
   max-height: 400px;
@@ -611,7 +611,7 @@ exports[`renders correctly 1`] = `
   transform: translate(-50%,0);
   left: 100%;
   bottom: 100%;
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   box-shadow: 0px 2px 12px -8px rgba(25,19,38,0.1),0px 1px 1px rgba(25,19,38,0.05);
   padding: 16px;
   max-height: 400px;
@@ -675,7 +675,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c79 {
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   border-radius: 50%;
   cursor: pointer;
   height: 26px;
@@ -714,7 +714,7 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #BDC2C4;
+  background:#BDC2C4;
   border-radius: 24px;
   box-shadow: inset 0px 2px 2px -1px rgba(74,74,104,0.1);
   cursor: pointer;
@@ -761,7 +761,7 @@ exports[`renders correctly 1`] = `
   height: 20px;
   font-size: 12px;
   padding: 0 8px;
-  background-color: transparent;
+  background:transparent;
   color: #1FC7D4;
   box-shadow: none;
 }
@@ -780,7 +780,7 @@ exports[`renders correctly 1`] = `
 
 .c32:disabled,
 .c32.pancake-button--disabled {
-  background-color: #E9EAEB;
+  background:#E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
   color: #BDC2C4;
@@ -818,7 +818,7 @@ exports[`renders correctly 1`] = `
   transition: background-color 0.2s,opacity 0.2s;
   height: 48px;
   padding: 0 24px;
-  background-color: transparent;
+  background:transparent;
   color: #1FC7D4;
   box-shadow: none;
   width: sm;
@@ -839,7 +839,7 @@ exports[`renders correctly 1`] = `
 
 .c36:disabled,
 .c36.pancake-button--disabled {
-  background-color: #E9EAEB;
+  background:#E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
   color: #BDC2C4;
@@ -877,7 +877,7 @@ exports[`renders correctly 1`] = `
   transition: background-color 0.2s,opacity 0.2s;
   height: 48px;
   padding: 0 24px;
-  background-color: transparent;
+  background:transparent;
   color: #1FC7D4;
   box-shadow: none;
 }
@@ -896,7 +896,7 @@ exports[`renders correctly 1`] = `
 
 .c85:disabled,
 .c85.pancake-button--disabled {
-  background-color: #E9EAEB;
+  background:#E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
   color: #BDC2C4;
@@ -934,7 +934,7 @@ exports[`renders correctly 1`] = `
   transition: background-color 0.2s,opacity 0.2s;
   height: 32px;
   padding: 0 16px;
-  background-color: #1FC7D4;
+  background:#1FC7D4;
   color: white;
 }
 
@@ -952,7 +952,7 @@ exports[`renders correctly 1`] = `
 
 .c92:disabled,
 .c92.pancake-button--disabled {
-  background-color: #E9EAEB;
+  background:#E9EAEB;
   border-color: #E9EAEB;
   box-shadow: none;
   color: #BDC2C4;
@@ -1102,7 +1102,7 @@ exports[`renders correctly 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  background-color: rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.7);
   box-shadow: inset 0px -2px 0px -8px rgba(133,133,133,0.1);
   overflow-x: scroll;
   -webkit-scrollbar-width: none;
@@ -1121,7 +1121,7 @@ exports[`renders correctly 1`] = `
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  background-color: rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.7);
   box-shadow: inset 0px -2px 0px -8px rgba(133,133,133,0.1);
   overflow-x: scroll;
   -webkit-scrollbar-width: none;
@@ -1192,7 +1192,7 @@ exports[`renders correctly 1`] = `
   align-items: center;
   width: 100%;
   height: 56px;
-  background-color: #FFFFFF;
+  background:#FFFFFF;
   border-bottom: 1px solid #E7E3EB;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);

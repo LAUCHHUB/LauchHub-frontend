@@ -10,7 +10,7 @@ interface CollectWinningsOverlayProps {
 }
 
 const Wrapper = styled(Flex)<{ isBottom: CollectWinningsOverlayProps['isBottom'] }>`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.secondary};
   left: 0;
   position: absolute;
   width: 100%;

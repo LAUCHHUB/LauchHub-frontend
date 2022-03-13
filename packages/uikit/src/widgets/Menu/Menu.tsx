@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
+  background: ${({ theme }) => theme.nav.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
@@ -62,7 +62,8 @@ const TopBannerContainer = styled.div<{ height: number }>`
 const BodyWrapper = styled(Box)`
   position: relative;
   display: flex;
-  background-color: ${({ theme }) => theme.nav.background};
+  background: ${({ theme }) => theme.nav.background};
+  // background: linear-gradient(180deg, #100324 0%, #1e0e0d 40%, #1e0e0d 60%, #100324 100%);
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`

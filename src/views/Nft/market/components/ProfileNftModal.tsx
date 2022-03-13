@@ -15,7 +15,7 @@ export const StyledModal = styled(Modal)`
 `
 
 const TextWrapper = styled(Flex)`
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
 `
 
 interface ProfileNftModalProps extends InjectedModalProps {

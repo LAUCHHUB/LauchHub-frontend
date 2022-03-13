@@ -8,7 +8,7 @@ const StyledLogo = styled(LogoLoader)<{ size: string }>`
   height: ${({ size }) => size};
   border-radius: ${({ size }) => size};
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.075);
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
 `
 

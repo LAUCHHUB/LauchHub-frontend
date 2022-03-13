@@ -64,7 +64,7 @@ const ResetCSS = createGlobalStyle`
     box-sizing: border-box;
   }
   * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'system-ui', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -81,8 +81,9 @@ const ResetCSS = createGlobalStyle`
 
   /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 3px;
   }
+
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.textSubtle}; 
     border-radius: 8px;

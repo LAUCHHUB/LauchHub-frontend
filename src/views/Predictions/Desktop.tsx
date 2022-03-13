@@ -32,7 +32,7 @@ const ExpandButtonGroup = styled(Flex)`
   left: 32px;
   position: absolute;
   display: none;
-  background-color: ${({ theme }) => theme.colors.input};
+  background: ${({ theme }) => theme.colors.input};
   border-radius: 24px 24px 0 0;
   z-index: 50;
   ${({ theme }) => theme.mediaQueries.lg} {
@@ -90,7 +90,7 @@ const Gutter = styled.div<{ isChartPaneOpen?: boolean }>`
   position: relative;
 
   &:before {
-    background-color: ${({ theme }) => theme.colors.textSubtle};
+    background: ${({ theme }) => theme.colors.textSubtle};
     border-radius: 8px;
     content: '';
     height: 4px;

@@ -51,6 +51,11 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
+    label: 'Swap',
+    href: '/swap',
+    icon: TrophyIcon,
+  },
+  {
     label: t('Win'),
     href: '/prediction',
     icon: TrophyIcon,

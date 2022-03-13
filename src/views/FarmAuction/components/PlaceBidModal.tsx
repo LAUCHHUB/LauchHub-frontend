@@ -31,7 +31,7 @@ const StyledModal = styled(Modal)`
 
 const ExistingInfo = styled(Box)`
   padding: 24px;
-  background-color: ${({ theme }) => theme.colors.dropdown};
+  background: ${({ theme }) => theme.colors.dropdown};
 `
 
 const InnerContent = styled(Box)`

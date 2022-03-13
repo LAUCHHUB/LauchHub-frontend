@@ -20,7 +20,7 @@ import RoundsTab from './components/History/RoundsTab'
 import PnlTab from './components/History/PnlTab/PnlTab'
 
 const StyledHistory = styled.div`
-  background-color: ${({ theme }) => theme.card.background};
+  background: ${({ theme }) => theme.card.background};
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -35,7 +35,7 @@ const BetWrapper = styled.div`
 
 const SpinnerWrapper = styled.div`
   align-items: center;
-  background-color: ${({ theme }) => theme.card.background};
+  background: ${({ theme }) => theme.card.background};
   display: flex;
   left: 0;
   height: 100%;

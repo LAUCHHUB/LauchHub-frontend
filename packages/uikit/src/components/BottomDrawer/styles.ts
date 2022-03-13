@@ -22,7 +22,7 @@ const UnmountAnimation = keyframes`
 export const DrawerContainer = styled.div<{ isUnmounting: boolean }>`
   width: 100%;
   height: 80vh;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
+  background: ${({ theme }) => theme.colors.backgroundAlt};
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
   position: fixed;

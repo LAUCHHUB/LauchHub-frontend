@@ -9,7 +9,7 @@ it("renders correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {
-      background-color: #eeeaf4;
+      background:#eeeaf4;
       border: 0;
       border-radius: 16px;
       box-shadow: inset 0px 2px 2px -1px rgba(74,74,104,0.1);
@@ -40,7 +40,7 @@ it("renders correctly", () => {
     }
 
     .c0:disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       box-shadow: none;
       color: #BDC2C4;
       cursor: not-allowed;

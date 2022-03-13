@@ -37,7 +37,7 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
 export const StyledBalanceMaxMini = styled.button`
   height: 22px;
   width: 22px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
   border: none;
   border-radius: 50%;
   padding: 0.2rem;
@@ -52,10 +52,10 @@ export const StyledBalanceMaxMini = styled.button`
   float: right;
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.dropdown};
+    background: ${({ theme }) => theme.colors.dropdown};
   }
   :focus {
-    background-color: ${({ theme }) => theme.colors.dropdown};
+    background: ${({ theme }) => theme.colors.dropdown};
     outline: none;
   }
 `
@@ -65,7 +65,7 @@ export const TruncatedText = styled(Text).attrs({ ellipsis: true })`
 `
 
 const SwapCallbackErrorInner = styled.div`
-  background-color: ${({ theme }) => `${theme.colors.failure}33`};
+  background: ${({ theme }) => `${theme.colors.failure}33`};
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@ const SwapCallbackErrorInner = styled.div`
 `
 
 const SwapCallbackErrorInnerAlertTriangle = styled.div`
-  background-color: ${({ theme }) => `${theme.colors.failure}33`};
+  background: ${({ theme }) => `${theme.colors.failure}33`};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,7 @@ export function SwapCallbackError({ error }: { error: string }) {
 }
 
 export const SwapShowAcceptChanges = styled(AutoColumn)`
-  background-color: ${({ theme }) => `${theme.colors.warning}33`};
+  background: ${({ theme }) => `${theme.colors.warning}33`};
   padding: 0.5rem;
   border-radius: 12px;
   margin-top: 8px;

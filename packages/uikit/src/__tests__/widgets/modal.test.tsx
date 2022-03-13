@@ -80,7 +80,7 @@ it("renders correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: transparent;
+      background:transparent;
       color: #1FC7D4;
       box-shadow: none;
     }
@@ -99,7 +99,7 @@ it("renders correctly", () => {
 
     .c7:disabled,
     .c7.pancake-button--disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
       color: #BDC2C4;

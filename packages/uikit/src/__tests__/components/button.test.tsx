@@ -37,7 +37,7 @@ it("renders correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: #1FC7D4;
+      background:#1FC7D4;
       color: white;
     }
 
@@ -55,7 +55,7 @@ it("renders correctly", () => {
 
     .c0:disabled,
     .c0.pancake-button--disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
       color: #BDC2C4;

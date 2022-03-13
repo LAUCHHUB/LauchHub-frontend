@@ -18,7 +18,7 @@ it("renders correctly", () => {
 
     .c0 {
       position: relative;
-      background-color: #eeeaf4;
+      background:#eeeaf4;
       box-shadow: inset 0px 2px 2px -1px rgba(74,74,104,0.1);
       overflow: hidden;
       border-radius: 32px;

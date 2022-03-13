@@ -92,7 +92,7 @@ it("renders ConnectModal correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: transparent;
+      background:transparent;
       color: #1FC7D4;
       box-shadow: none;
     }
@@ -111,7 +111,7 @@ it("renders ConnectModal correctly", () => {
 
     .c7:disabled,
     .c7.pancake-button--disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
       color: #BDC2C4;
@@ -149,7 +149,7 @@ it("renders ConnectModal correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: transparent;
+      background:transparent;
       color: #1FC7D4;
       box-shadow: none;
       width: 100%;
@@ -171,7 +171,7 @@ it("renders ConnectModal correctly", () => {
 
     .c15:disabled,
     .c15.pancake-button--disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
       color: #BDC2C4;
@@ -209,7 +209,7 @@ it("renders ConnectModal correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: #7A6EAA;
+      background:#7A6EAA;
       color: #FFFFFF;
       width: 100%;
     }
@@ -228,7 +228,7 @@ it("renders ConnectModal correctly", () => {
 
     .c22:disabled,
     .c22.pancake-button--disabled {
-      background-color: #E9EAEB;
+      background:#E9EAEB;
       border-color: #E9EAEB;
       box-shadow: none;
       color: #BDC2C4;

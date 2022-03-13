@@ -8,7 +8,7 @@ interface StyledCardRibbonProps extends CardRibbonProps {
 
 const StyledCardRibbon = styled.div<Partial<StyledCardRibbonProps>>`
   z-index: 10;
-  background-color: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
+  background: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
   color: white;
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ const StyledCardRibbon = styled.div<Partial<StyledCardRibbonProps>>`
 
   &:before,
   &:after {
-    background-color: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
+    background: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
     content: "";
     height: 100%;
     margin: 0 -1px; /* Removes tiny gap */

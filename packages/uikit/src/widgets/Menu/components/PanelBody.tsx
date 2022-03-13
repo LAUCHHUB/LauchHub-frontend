@@ -42,7 +42,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   return (
     <Container>
       {links.map((entry) => {
-        const iconElement = entry.icon;
+        const IconElement = entry.icon;
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
 
         if (entry.items) {
@@ -55,7 +55,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               key={entry.label}
               isPushed={isPushed}
               pushNav={pushNav}
-              icon={iconElement}
+              icon={entry.icon}
               label={entry.label}
               initialOpenState={initialOpenState}
               className={calloutClass}
@@ -66,6 +66,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
                   <MenuEntry
                     // eslint-disable-next-line react/no-array-index-key
                     key={`children-${item.href}-${index}`}
+                    className="menu-sub-item"
                     secondary
                     isActive={item.href === location.pathname}
                     onClick={handleClick}
@@ -81,7 +82,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
         return (
           <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
             <MenuLink href={entry.href} target={entry.target} onClick={handleClick}>
-              {iconElement}
+              <IconElement />
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
               {isPushed && <BlockIcon>{entry.att && <Attach att={entry.att} />}</BlockIcon>}
             </MenuLink>
