@@ -11,9 +11,8 @@ If you want to contribute, please refer to the [contributing guidelines](./CONTR
 
 ### Config Nginx
 
-Step 1:
-
-`file config at /etc/nginx/sites-enabled
+Step 1: File config at /etc/nginx/sites-enabled
+```shell
 
     location / {
         proxy_pass http://localhost:3000;
@@ -24,8 +23,9 @@ Step 1:
         proxy_cache_bypass $http_upgrade;
     }
 
-`
+```
 
 Step 2: Run script at repository
-
-$pm2 start yarn --name "nextjs" --interpreter bash -- start
+```shell
+    $pm2 start yarn --name "nextjs" --interpreter bash -- start
+```
